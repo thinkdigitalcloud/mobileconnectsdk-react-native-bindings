@@ -1,4 +1,4 @@
-import { NativeModules, NativeEventEmitter } from "react-native";
+import { NativeModules } from "react-native";
 const { GallagherMobileAccess } = NativeModules;
 
 console.log("Creating new GallagherMobileAccessEvents emitter!");
@@ -16,16 +16,16 @@ interface Reader {
   name: String;
 }
 
-interface ReaderAttributes extends Reader {
-  "measuredPathLoss": Number;
-  "distance": String;
-  "autoConnectPathLoss": Number;
-  "manualConnectPathLoss": Number;
-  "isBleManualConnectEnabled": Boolean;
-  "isBleAutoConnectEnabled": Boolean;
-  "isSecondFactorRequired": Boolean;
-  "isBleActionsEnabled": Boolean;
-}
+// interface ReaderAttributes extends Reader {
+//   "measuredPathLoss": Number;
+//   "distance": String;
+//   "autoConnectPathLoss": Number;
+//   "manualConnectPathLoss": Number;
+//   "isBleManualConnectEnabled": Boolean;
+//   "isBleAutoConnectEnabled": Boolean;
+//   "isSecondFactorRequired": Boolean;
+//   "isBleActionsEnabled": Boolean;
+// }
 
 interface RegisterCredentialContinuation {
   completed: Boolean;
