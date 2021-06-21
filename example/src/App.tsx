@@ -48,7 +48,7 @@ function DigitalIdScreen({ navigation }) {
 
 const Tab = createBottomTabNavigator();
 
-GallagherMobileAccess.configure(null, "allowInvalidCertificate", []);
+GallagherMobileAccess.configure(null, null, null);
 
 function App() {
   useEffect(async () => {
