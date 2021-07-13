@@ -104,19 +104,25 @@ AppRootFolder/Gallagher/sdk/ios/
     iphonesimulator/libGallagherMobileAccess.a
 ```
 
-4. In your package.json file you can now add the react-native-gallagher-mobile-access as a npm package to install in two ways:
+4. In your package.json file you can now add the react-native-gallagher-mobile-access as a npm package to install in three ways:
 * Using the repo from github:
 ```json
   "dependencies": {
-    "react-native-gallagher-mobile-access": "https://github.com/GallagherSecurity/mobileconnectsdk-react-native-bindings/tree/main/react-native-gallagher-mobile-access",
+    "react-native-gallagher-mobile-access": "https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main",
   ...
 ```
-* Pulling and/or copying the Gallagher repo and providing the path to the `react-native-gallagher-mobile-access` folder (remember file paths in your package.json are relative, you will need to adjust the file path accordingly to your folder structures)
+* Pulling and/or copying the Gallagher repo and providing the path to the `react-native-gallagher-mobile-access` folder (remember file paths in your package.json are relative, you will need to adjust the file path accordingly to your folder structures, you also need to update the native_lib_path in the [Podspec file][react-native-gallagher-mobile-access.podspec] to match where the sdk is located)
 ```json
   "dependencies": {
     "react-native-gallagher-mobile-access": "file:../../git/react-native-gallagher-mobile-access/react-native-gallagher-mobile-access",
   ...
 ```
+* yarn or npm
+```
+yarn add 'https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main'
+npm install 'https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main'
+```
+
 5. Run `yarn` or `npm install` in your root folder of your project to install the `react-native-gallagher-mobile-access` into your `node_modules`
 ```sh
 yarn
@@ -207,3 +213,4 @@ try {
 ```
 
 [ios-dev-guide]: https://gallaghersecurity.github.io/mobileconnectsdk-docs/docs/ios/sdk-docs/developer-guide.html
+[podspec-file]: react-native-gallagher-mobile-access.podspec
