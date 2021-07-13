@@ -4,7 +4,7 @@ import { Button, View, Text, FlatList, StyleSheet, TouchableOpacity, NativeEvent
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import GallagherMobileAccess, { SdkStateChanged, ReaderUpdated, AccessEvent } from '../../bindings/react-native-gallagher-mobile-access';
+import GallagherMobileAccess, { SdkStateChanged, ReaderUpdated, AccessEvent } from 'react-native-gallagher-mobile-access';
 const GallagherMobileAccessEvents = new NativeEventEmitter(GallagherMobileAccess);
 
 const Stack = createStackNavigator();

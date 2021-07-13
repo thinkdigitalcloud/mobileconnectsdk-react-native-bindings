@@ -4,7 +4,7 @@ import { Button, View, Text, FlatList, StyleSheet, TextInput, Alert } from 'reac
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import GallagherMobileAccess from '../../bindings/react-native-gallagher-mobile-access';
+import GallagherMobileAccess from 'react-native-gallagher-mobile-access';
 
 const Stack = createStackNavigator();
 

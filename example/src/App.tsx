@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CredentialsScreen from './CredentialsScreen';
 import ReadersScreen from './ReadersScreen';
 
-import GallagherMobileAccess from '../../bindings/react-native-gallagher-mobile-access';
+import GallagherMobileAccess from 'react-native-gallagher-mobile-access';
 
 const styles = StyleSheet.create({
   container: {

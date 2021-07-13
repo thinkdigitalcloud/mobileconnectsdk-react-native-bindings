@@ -7,6 +7,18 @@ declare module 'react-native-gallagher-mobile-access' {
     registeredDate: String;
   }
 
+  export interface SdkStateChanged {
+    [key: string]: any
+  }
+
+  export interface ReaderUpdated {
+    [key: string]: any
+  }
+
+  export interface AccessEvent {
+    [key: string]: any
+  }
+
   export interface Reader {
     id: String;
     name: String;
