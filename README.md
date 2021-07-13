@@ -59,5 +59,5 @@ Note: A tick means that code exists for the feature. It does not indicate qualit
 
 
 [license]: LICENSE
-[bindings]: bindings/react-native-gallagher-mobile-access
-[bindings-readme]: bindings/react-native-gallagher-mobile-access/README.md
+[bindings]: react-native-gallagher-mobile-access
+[bindings-readme]: react-native-gallagher-mobile-access/README.md

@@ -22,6 +22,7 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.2.0",
     "react-native-safe-area-context": "^3.2.0",
+    "react-native-gallagher-mobile-access": "file:../react-native-gallagher-mobile-access",
     "react-native-screens": "^3.3.0",
     "typescript": "^4.3.2"
   },
