@@ -2,8 +2,7 @@ require "json"
 
 package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
-# Change this to point to the relative place where you've put the GallagherMobileAccess static library files
-native_lib_path = "/Users/orione/Dev/TMP/lib"
+native_lib_path = __dir__ + "/../../gallagher/sdk/ios"
 
 Pod::Spec.new do |s|
   s.name         = "react-native-gallagher-mobile-access"

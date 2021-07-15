@@ -23,6 +23,7 @@ You should not use it as a reference for UI structure, program design, or for an
 First, make sure you can build and compile the example app.  
 This will make sure your dev system is set up correctly.
 
+### iOS Setup (Example app)
 *Prerequisite: Static Library*
 
 1. Unzip the static library that you obtained from Gallagher. It should have a folder structure as follows:
@@ -34,35 +35,25 @@ iphoneos/
 iphonesimulator/
         libGallagherMobileAccess.a
 ```
-
-Edit the file `bindings/react-native-gallagher-mobile-access/react-native-gallagher-mobile-access.podspec`.
-It wants to know where to find the static library files; Edit the podspec appropriately
-
-```ruby
-# Change this to point to the relative place where you've put the GallagherMobileAccess static library files
-native_lib_path = "/Users/yourname/yourpath"
+2. Move the files that was unzipped in the previous step into a folder within the example app as follows:
+##### *Please note that is nessasary for the react-native autolinking to take place since the bindings will be installed into your node_modules and needs to know where to find the static library files*
+```
+example/Gallagher/sdk/ios
 ```
 
-## Building the bindings and example app
+3. The folder structure should now be as follows:
 
+```
+example/Gallagher/sdk/ios/
+    GallagherMobileAccess.swiftmodule/*.swiftmodule, swiftinterface, etc
+    iphoneos/libGallagherMobileAccess.a
+    iphonesimulator/libGallagherMobileAccess.a
+```
+
+## Building the example app
+*Prerequisite: iOS setup for the example app*
 ```sh
-cd bindings/react-native-gallagher-mobile-access 
-yarn
-
-# At this point you should see a bunch of log output:
-# Resolving packages...
-# Building fresh packages..
-# bob build
-# ...
-# Wrote definition files to lib/typescript
-# ...
-# > pod install
-# Auto-linking React Native modules for target `GallagherMobileAccessExample
-# ...
-# Pod installation complete! There are 55 dependencies from the Podfile and 46 total pods installed.
-# ✨  Done in 34.45s.
-
-cd ../../example
+cd example
 yarn
 # ✨  Done in 8.23s.
 ```
@@ -82,27 +73,85 @@ You will need to change the Apple development Team ID to your own, rather than G
 
 If everything goes according to plan, you will see the example app launch on your phone.
 
-You should then follow the [Developer Guide][ios-dev-guide] for the native SDK, translating method calls into JavaScript as appropriate. Look at the typescript bindings in `src/typescript/index.d.ts` for the translated method call names and signatures.
+You should then follow the [Developer Guide][ios-dev-guide] for the native SDK, translating method calls into JavaScript as appropriate. Look at the typescript bindings in `react-native-gallagher-mobile-access/index.d.ts` for the translated method call names and signatures.
 
 *Note: the ios developer guide mentions linking libraries, and the RxSwift dependency. You do not need to do any of this for the React Native integration, as it is managed by CocoaPods*
 
-## Integrating the bindings into your own app
+### iOS Setup: Integrating the bindings into your own app
+*Prerequisite: Static Library*
 
-1. Copy or otherwise load the `bindings/react-native-gallagher-mobile-access` folder into your source control
-
-2. In your app's `podfile`, add the following (adjusting the file path as appropriate):
-
-```ruby
-pod 'react-native-gallagher-mobile-access', :path => '../../bindings/react-native-gallagher-mobile-access'
+1. Unzip the static library that you obtained from Gallagher. It should have a folder structure as follows:
+```
+GallagherMobileAccess.swiftmodule/
+        *.swiftmodule, swiftinterface, etc
+iphoneos/
+        libGallagherMobileAccess.a
+iphonesimulator/
+        libGallagherMobileAccess.a
+```
+2. Move the files that was unzipped in the previous step into a folder in the root of your project as follows:
+##### *Please note that is nessasary for the react-native autolinking to take place since the bindings will be installed into your node_modules and needs to know where to find the static library files*
+```
+AppRootFolder/Gallagher/sdk/ios
 ```
 
-3. From your app, do the following (adjusting the file path as appropriate):
+3. The folder structure should now be as follows:
 
+```
+AppRootFolder/Gallagher/sdk/ios/
+    GallagherMobileAccess.swiftmodule/*.swiftmodule, swiftinterface, etc
+    iphoneos/libGallagherMobileAccess.a
+    iphonesimulator/libGallagherMobileAccess.a
+```
+
+4. In your package.json file you can now add the react-native-gallagher-mobile-access as a npm package to install in three ways:
+* Using the repo from github:
+```json
+  "dependencies": {
+    "react-native-gallagher-mobile-access": "https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main",
+  ...
+```
+* Pulling and/or copying the Gallagher repo and providing the path to the `react-native-gallagher-mobile-access` folder (remember file paths in your package.json are relative, you will need to adjust the file path accordingly to your folder structures, you also need to update the native_lib_path in the [Podspec file][react-native-gallagher-mobile-access.podspec] to match where the sdk is located)
+```json
+  "dependencies": {
+    "react-native-gallagher-mobile-access": "file:../../git/react-native-gallagher-mobile-access/react-native-gallagher-mobile-access",
+  ...
+```
+* yarn or npm
+```
+yarn add 'https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main'
+npm install 'https://gitpkg.now.sh/GallagherSecurity/mobileconnectsdk-react-native-bindings/react-native-gallagher-mobile-access?main'
+```
+
+5. Run `yarn` or `npm install` in your root folder of your project to install the `react-native-gallagher-mobile-access` into your `node_modules`
+```sh
+yarn
+```
+6. You will need to update your `info.plist` with the following:
+```xml
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Your location is needed to detect readers using Bluetooth®. GPS is not used and your location is never shared.</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Your location is needed to detect readers using Bluetooth®. GPS is not used and your location is never shared.</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Your location is needed to detect readers using Bluetooth®. GPS is not used and your location is never shared.</string>
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>Your Bluetooth® is needed to detect readers using Bluetooth®</string>
+  <key>UIBackgroundModes</key>
+  <array>
+      <string>bluetooth-central</string>
+  </array>
+```
+7. Run `pod install` in your ios folder within your react native project to link the native dependencies
+```sh
+cd ios/
+```
+8. Now you should be able to use the `GallagherMobileAccess` within your application as below:
 ```js
-import GallagherMobileAccess from '../../bindings/react-native-gallagher-mobile-access';
-```
+import GallagherMobileAccess from 'react-native-gallagher-mobile-access';
 
-4. As per the native iOS developer guide, you'll need to put some things in your `Info.plist`, etc.
+GallagherMobileAccess.configure(null, null, null);
+```
 
 ## Usage
 
@@ -164,3 +213,4 @@ try {
 ```
 
 [ios-dev-guide]: https://gallaghersecurity.github.io/mobileconnectsdk-docs/docs/ios/sdk-docs/developer-guide.html
+[podspec-file]: react-native-gallagher-mobile-access.podspec
