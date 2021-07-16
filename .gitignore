@@ -3,3 +3,5 @@ Pods/
 .DS_Store
 xcuserdata/
 example/gallagher/*
+.gradle/
+build/

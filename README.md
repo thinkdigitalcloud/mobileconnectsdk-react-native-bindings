@@ -39,7 +39,7 @@ Note: A tick means that code exists for the feature. It does not indicate qualit
 | ------------------------ | --------------- |----------- | -----------|
 | SDK initialisation       | -               | ✅         | ✅          |
 | localisation             | -               | -          | -          |
-| unlock notification config| ?              | ?          | ?          |
+| unlock notification config| x              | x          | x          |
 | register Credential      | -               | ✅         | ✅         |
 | delete Credential        | -               | ✅         | -          |
 | list Credentials         | -               | ✅         | ✅         |
