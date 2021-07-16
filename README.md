@@ -10,7 +10,7 @@ If you encounter a problem with the software you are encouraged to submit a Pull
 
 ## Android Bindings
 
-Android Bindings are not yet implemented. Work thus far has concentrated on iOS
+Android Bindings are implemented; TODO instructions on getting started
 
 ## iOS Bindings
 
@@ -37,25 +37,28 @@ Note: A tick means that code exists for the feature. It does not indicate qualit
 
 | API                      | Android Binding |iOS Binding | Sample App |
 | ------------------------ | --------------- |----------- | -----------|
-| SDK initialisation       | -               | ✅         | ✅          |
+| SDK initialisation       | ✅              | ✅         | ✅          |
 | localisation             | -               | -          | -          |
 | unlock notification config| x              | x          | x          |
-| register Credential      | -               | ✅         | ✅         |
-| delete Credential        | -               | ✅         | -          |
-| list Credentials         | -               | ✅         | ✅         |
-| sdk state feedback       | -               | ✅         | ✅         |
-| permissions              | -               |            | -         | 
-| enable BLE scanning      | -               | ✅         | ✅         |
-| enable BLE background    | -               | ✅         | -          |
-| automatic access         | -               | ✅         | ✅         |
-| automatic access feedback| -               | ✅         | ✅         |
-| nearby reader feedback   | -               | ✅         | ✅         |
+| register Credential      | ✅              | ✅         | ✅         |
+| delete Credential        | ✅              | ✅         | -          |
+| list Credentials         | ✅              | ✅         | ✅         |
+| sdk state feedback       | ✅              | ✅         | ✅         |
+| permissions              |                 |            | -         | 
+| enable BLE scanning      | ✅              | ✅         | ✅         |
+| enable BLE background    | ✅              | ✅         | -          |
+| automatic access         | ✅              | ✅         | ✅         |
+| automatic access feedback| ✅              | ✅         | ?          |
+| nearby reader feedback   | ✅              | ✅         | ✅         |
 | manual access            | -               | -          | -          |
 | manual access feedback   | -               | -          | -          |
 | SALTO integration        | -               | -          | -          |
 | Digital ID               | -               | -          | -          |
 | Cross-site credentials   | -               | -          | -          |
-| Android NFC              | -               | n/a        | n/a        |
+| Android NFC              | ✅              | n/a        | Partial    |
+
+*Note regarding Android NFC:*
+The example app works with Android NFC because it exposes the functions, but it does not implement "return to reader" screens.
 
 
 [license]: LICENSE
