@@ -3,4 +3,7 @@ apply from: file("../node_modules/@react-native-community/cli-platform-android/n
 include ':app'
 
 include ':reactnativegallaghermobileaccess'
-project(':reactnativegallaghermobileaccess').projectDir = new File(rootProject.projectDir, '../../android')
+
+// TODO this references the native module from the local filesystem.
+// Rather, we should reference it out of node_modules like has been done in iOS
+project(':reactnativegallaghermobileaccess').projectDir = new File(rootProject.projectDir, '../../react-native-gallagher-mobile-access/android')

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GallagherMobileAccessExample.iml" filepath="$PROJECT_DIR$/.idea/modules/GallagherMobileAccessExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GallagherMobileAccessExample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GallagherMobileAccessExample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-70940486/GallagherMobileAccessExample.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-70940486/GallagherMobileAccessExample.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1846421838/GallagherMobileAccessExample.react-native-gallagher-mobile-access.iml" filepath="$PROJECT_DIR$/.idea/modules/1846421838/GallagherMobileAccessExample.react-native-gallagher-mobile-access.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1158858403/GallagherMobileAccessExample.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1158858403/GallagherMobileAccessExample.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1244020383/GallagherMobileAccessExample.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1244020383/GallagherMobileAccessExample.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-615027066/GallagherMobileAccessExample.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-615027066/GallagherMobileAccessExample.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1653349918/GallagherMobileAccessExample.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1653349918/GallagherMobileAccessExample.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/643714928/GallagherMobileAccessExample.reactnativegallaghermobileaccess.iml" filepath="$PROJECT_DIR$/.idea/modules/643714928/GallagherMobileAccessExample.reactnativegallaghermobileaccess.iml" />
+    </modules>
+  </component>
+</project>
